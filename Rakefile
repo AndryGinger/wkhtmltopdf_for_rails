@@ -23,12 +23,12 @@ end
 desc "build a binary gem #{binary_gem_name}"
 task :binary do
   gemspec = get_binary_gemspec
-  gemspec.files += ['bin/wkhtmltopdf']
+  # gemspec.files += ['bin/wkhtmltopdf']
 
   FileUtils.mkdir_p 'pkg'
-  FileUtils.mkdir_p 'bin'
+  # FileUtils.mkdir_p 'bin'
 
-  FileUtils.cp "ext/wkhtmltopdf/wkhtmltopdf_#{gemspec.platform.os}", "bin/wkhtmltopdf"
+  # FileUtils.cp "ext/wkhtmltopdf/wkhtmltopdf_#{gemspec.platform.os}", "bin/wkhtmltopdf"
 
   package = if Gem::VERSION < '2.0.0'
     Gem::Builder.new(gemspec).build
@@ -38,7 +38,7 @@ task :binary do
   end
 
   FileUtils.mv(package, 'pkg')
-  FileUtils.remove_dir('bin')
+  # FileUtils.remove_dir('bin')
 end
 
 Rake::TestTask.new do |t|

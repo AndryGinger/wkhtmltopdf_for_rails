@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.summary = %q{Provides WKHTMLTOPDF for ruby on rails.}
-  s.extensions = 'ext/mkrf_conf.rb'
+  # s.extensions = 'ext/mkrf_conf.rb'
 end
 

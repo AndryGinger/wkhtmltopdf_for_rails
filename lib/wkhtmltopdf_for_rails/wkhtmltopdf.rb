@@ -10,7 +10,12 @@ module WkhtmltopdfForRails
     end
 
     def generate
-      wkhtml_call = File.join(File.dirname(__FILE__), "..", "..", "bin", "wkhtmltopdf ")
+      #
+      # Now we should used wkhtmltopdf package install into the system
+      # Due to wkhtmltopdf arch. changes (moved to packages instead of static bins)
+      #
+      # wkhtml_call = File.join(File.dirname(__FILE__), "..", "..", "bin", "wkhtmltopdf ")
+      wkhtml_call = 'wkhtmltopdf '
 
       if !@source.nil?
         wkhtml_call << "#{@source}"
