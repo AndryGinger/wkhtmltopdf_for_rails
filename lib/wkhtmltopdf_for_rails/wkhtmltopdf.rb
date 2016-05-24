@@ -15,14 +15,14 @@ module WkhtmltopdfForRails
       # Due to wkhtmltopdf arch. changes (moved to packages instead of static bins)
       #
       # wkhtml_call = File.join(File.dirname(__FILE__), "..", "..", "bin", "wkhtmltopdf ")
-      wkhtml_call = 'wkhtmltopdf '
+      wkhtml_call = 'wkhtmltopdf -q '
 
       if !@source.nil?
         wkhtml_call << "#{@source}"
       else
         wkhtml_call << "#{@html_file}"
       end
-      wkhtml_call << " #{@params_string} - -q"
+      wkhtml_call << " #{@params_string} -"
       IO.popen(wkhtml_call, "rb").read
     end
 
