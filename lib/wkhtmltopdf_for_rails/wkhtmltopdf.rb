@@ -15,7 +15,7 @@ module WkhtmltopdfForRails
       # Due to wkhtmltopdf arch. changes (moved to packages instead of static bins)
       #
       # wkhtml_call = File.join(File.dirname(__FILE__), "..", "..", "bin", "wkhtmltopdf ")
-      wkhtml_call = 'wkhtmltopdf -q '
+      wkhtml_call = '/usr/local/bin/wkhtmltopdf -q '
 
       if !@source.nil?
         wkhtml_call << "#{@source}"
